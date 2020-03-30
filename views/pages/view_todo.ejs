@@ -1,0 +1,60 @@
+<%- include('../templates/header'); -%>
+<%- include('../templates/navbar'); -%>
+    <div class="container" id="detail">
+        <div class="row mt-4">
+            <div class="col-md-9">
+                <h3>To do: <%=todo.title%></h3>
+            </div>
+            <div class="col-md-3">
+                <i class="fas fa-plus new-step" title="Ajouter une nouvelle étape"></i>
+                <a href="/reinitializesteps/<%=todo.id%>" class="restore-steps"><i class="fas fa-sync" title="Reset progress"></i></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Begining date: <%=todo.begining_date.format('LL')%></h5>  
+            </div>
+            <div class="col-md-6">
+                <h5>End date: <%=todo.end_date.format('LL')%></h5>                   
+            </div>
+        </div>
+        <table id="steps-table" class="table table-hover mt-4">
+            <thead>
+                <th>Steps:</th>
+                <th>Etat</th>
+            </thead>
+            <tbody>
+                <% for (step of steps) {%>
+                    <tr>
+                        <td class="steps-cont">
+                            <input type="hidden" value="<%=todo.id%>">
+                            <input type="hidden" value="<%=step.id%>">
+                            <span class="del-steps" title="Delete this step" style="display: none;">&times;</span>
+                            <%=step.content%> 
+                        </td>
+                        <td>
+                            <a href="/changedone/<%=step.id%>/<%=todo.id%>" class="label-container">
+                                <%if (step.done == 0) {%>
+                                    <span class="checkmark" title="Marquer comme terminée"></span>
+                                <%} else {%>
+                                    <span class="checkmark-checked"></span>
+                                <%}%>
+                            </a>   
+                        </td>
+                    </tr>
+                <%}%>
+                <form action="" class="form-inline" method="post">
+                    <tr id="add-step-form" style="display:none">
+                        <td>
+                            <input type="hidden" value="<%=todo.id%>" name="list_id">
+                            <div class="form-group">
+                                <input type="text" name="content" autocomplete="off" placeholder="Inserez le contenu ici..." id="content" class="form-control">
+                            </div>
+                        </td>
+                        <td><button class="btn btn-primary" name="add_steps" type="submit">Add</button></td>                           
+                    </tr>
+                </form>
+            </tbody>       
+        </table>    
+    </div>
+<%- include('../templates/footer'); -%>

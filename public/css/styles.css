@@ -1,0 +1,110 @@
+@font-face {
+  font-family: "SourceSansPro-Regular";
+  src: url('/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf');
+}
+@font-face {
+  font-family: SourceSansPro-Bold;
+    src: url('/fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf');
+}
+@font-face{
+    font-family:Limelight;
+    src: url('/fonts/Limelight/Limelight-Regular.ttf');
+}
+@font-face{
+    font-family:Lobster;
+    src: url('/fonts/Lobster/Lobster-Regular.ttf');
+}
+body{
+  font-family: "SourceSansPro-Regular";
+}
+/* Customize the label (the container) */
+.label-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #ccc;
+  border-radius: 10px;
+}
+/* Create a custom checkbox */
+.checkmark-checked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #82c8ff;
+  border-radius: 10px;
+}
+
+/* On mouse-over, add a grey background color */
+
+/* When the checkbox is checked, add a blue background */
+/*.container input:checked ~ .checkmark {
+  
+}*/
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark-checked:after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+/* Show the checkmark when checked */
+/*.container input:checked ~ .checkmark:after {
+  display: block;
+}*/
+
+/* Style the checkmark/indicator */
+.label-container .checkmark-checked:after {
+  left: 9px;
+  top: 5px;
+  width: 7px;
+  height: 17px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.del-steps {
+  color: #ff7851;
+  cursor: pointer;
+  font-weight: bold;
+}
+.new-step{
+  cursor: pointer;
+}
+#main-logo{
+  font-family: Limelight;
+}
+#new-todo{
+  font-family: SourceSansPro-Bold;
+}
+table#steps-table {
+  font-size: 2em;
+}
+table#item-list{
+  font-size: 1.5em;
+}
+.restore-steps{
+  color: #888;
+  margin-left: 10px;
+}
+.restore-steps:hover{
+  color: #999;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "task_helper",
+  "version": "1.0.0",
+  "description": "This app will help you managing your task",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Eddie",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "jquery": "^3.4.1",
+    "jquery-ui": "^1.12.1",
+    "moment": "^2.24.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.2",
+    "popper.js": "^1.16.1"
+  }
+}
