@@ -16,7 +16,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "jquery": "^3.4.1",
-    "jquery-ui": "^1.12.1",
+    "jquery-ui": "^1.13.0",
     "moment": "^2.24.0",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.2",
